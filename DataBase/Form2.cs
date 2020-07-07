@@ -16,12 +16,14 @@ namespace DataBase
     public partial class Form2 : Form //форма создания нового сотрудника
     {
 
-        SqlConnection sc = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\SOBASH\SOURCE\REPOS\DATABASESQL\DATABASE\NAUKADEPT.MDF;Integrated Security=True;Connect Timeout=30");
+        // подключаем БД
+        string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;Initial Catalog = staff; Integrated Security = True";
 
 
         public Form2()
         {
             InitializeComponent();
+
         }
         
 
@@ -56,34 +58,39 @@ namespace DataBase
                 if (main != null)
                 {
 
-                    sc.Open();
+                    // подключаемся к БД
+                    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                    {
+                        sqlCon.Open();
+                        {
 
-                    // задаем текстбоксам принимаемые ими значения
-                    string Name = textBoxName.Text;
-                    string Surname = textBoxSurname.Text;
-                    string Patronomic = textBoxPatronymic.Text;
-                    string Date = dateTimePicker1.Text;
-                    string Adress = textBoxAdress.Text;
-                    string Dept = comboBox1.Text;
-                    string About = textBoxAbout.Text;
+                            // задаем текстбоксам принимаемые ими значения
+                            string Name = textBoxName.Text;
+                            string Surname = textBoxSurname.Text;
+                            string Patronomic = textBoxPatronymic.Text;
+                            string Date = Convert.ToDateTime(dateTimePicker1.Text).ToString("yyyyMMdd"); //конвертируем чтоб работало с SQL
+                            string Adress = textBoxAdress.Text;
+                            string Dept = comboBox1.Text;
+                            string About = textBoxAbout.Text;
 
-                    //выполняем sql запрос на добавление новой записи
+                            //выполняем sql запрос на добавление новой записи
 
-                    string query = $"insert into [list](Name, Surname, Patronomic, Date, Adress, Dept, About) Values(N'{Name}',N'{Surname}',N'{Patronomic}',N'{Date}',N'{Adress}',N'{Dept}',N'{About}');";
+                            string query = $"insert into [tb_list](name, surname, patronomic, date, adress, dept, about) Values(N'{Name}',N'{Surname}',N'{Patronomic}',N'{Date}',N'{Adress}',N'{Dept}',N'{About}');";
 
-                     SqlCommand rg = new SqlCommand(query, sc);
-                     rg.Parameters.Add(new SqlParameter("@Name", Name));
-                     rg.Parameters.Add(new SqlParameter("@Surname", Surname));
-                     rg.Parameters.Add(new SqlParameter("@Patronomic", Patronomic));
-                     rg.Parameters.Add(new SqlParameter("@Date", Date));
-                     rg.Parameters.Add(new SqlParameter("@Adress", Adress));
-                     rg.Parameters.Add(new SqlParameter("@Dept", Dept));
-                     rg.Parameters.Add(new SqlParameter("@About", About)); 
+                            SqlCommand rg = new SqlCommand(query, sqlCon);
+                            rg.Parameters.Add(new SqlParameter("@name", Name));
+                            rg.Parameters.Add(new SqlParameter("@surname", Surname));
+                            rg.Parameters.Add(new SqlParameter("@patronomic", Patronomic));
+                            rg.Parameters.Add(new SqlParameter("@date", Date));
+                            rg.Parameters.Add(new SqlParameter("@adress", Adress));
+                            rg.Parameters.Add(new SqlParameter("@dept", Dept));
+                            rg.Parameters.Add(new SqlParameter("@about", About));
 
 
-                    rg.ExecuteNonQuery();
-                   
-                    sc.Close();
+                            rg.ExecuteNonQuery();
+
+                        }
+                    }
 
 
                     MessageBox.Show("Данные внесены успешно!");

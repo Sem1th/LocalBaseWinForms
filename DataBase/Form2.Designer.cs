@@ -47,7 +47,6 @@
             this.listBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -77,9 +76,12 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(251, 48);
+            this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(282, 48);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
+            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateTimePicker1.Size = new System.Drawing.Size(115, 20);
             this.dateTimePicker1.TabIndex = 15;
             // 
             // comboBox1
@@ -91,9 +93,9 @@
             "Отдел разработки",
             "Руководство",
             "Отдел эксплуатации"});
-            this.comboBox1.Location = new System.Drawing.Point(251, 101);
+            this.comboBox1.Location = new System.Drawing.Point(282, 104);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 21);
+            this.comboBox1.Size = new System.Drawing.Size(115, 21);
             this.comboBox1.TabIndex = 14;
             // 
             // label7
@@ -117,7 +119,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(301, 85);
+            this.label5.Location = new System.Drawing.Point(317, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 11;
@@ -126,7 +128,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(280, 32);
+            this.label4.Location = new System.Drawing.Point(292, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 10;
@@ -199,8 +201,6 @@
             // 
             this.listBindingSource.DataMember = "list";
             // 
-            // naukaDeptDataSet
-            // 
             // buttonAdd
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.Green;
@@ -227,9 +227,6 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // listTableAdapter
-            // 
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,7 +242,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBindingSource)).EndInit();
-
             this.ResumeLayout(false);
 
         }

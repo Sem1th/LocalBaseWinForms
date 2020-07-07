@@ -33,5 +33,16 @@ namespace DataBase.Properties {
                 return ((string)(this["NaukaDeptConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=staff;Integrated Security=True" +
+            "")]
+        public string staffConnectionString {
+            get {
+                return ((string)(this["staffConnectionString"]));
+            }
+        }
     }
 }

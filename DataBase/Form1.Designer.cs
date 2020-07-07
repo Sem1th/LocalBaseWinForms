@@ -29,29 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patronomicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aboutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonRed = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.buttonDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.listBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.naukaDeptDataSet2 = new DataBase.NaukaDeptDataSet2();
             this.buttonAddMain = new System.Windows.Forms.Button();
-            this.listTableAdapter2 = new DataBase.NaukaDeptDataSet2TableAdapters.listTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.помошьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.функционалToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxFind = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -69,14 +55,26 @@
             this.textBox2Surname = new System.Windows.Forms.TextBox();
             this.textBox1Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1Close = new System.Windows.Forms.Button();
+            this.staffDataSet = new DataBase.staffDataSet();
+            this.tblistBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_listTableAdapter = new DataBase.staffDataSetTableAdapters.tb_listTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonRed = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.buttonDel = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.naukaDeptDataSet2)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staffDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblistBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -89,16 +87,17 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn,
-            this.patronomicDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.adressDataGridViewTextBoxColumn,
-            this.deptDataGridViewTextBoxColumn,
-            this.aboutDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
             this.buttonRed,
             this.buttonDel});
-            this.dataGridView1.DataSource = this.listBindingSource2;
+            this.dataGridView1.DataSource = this.tblistBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(10, 63);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -108,112 +107,15 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.surnameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // patronomicDataGridViewTextBoxColumn
-            // 
-            this.patronomicDataGridViewTextBoxColumn.DataPropertyName = "Patronomic";
-            this.patronomicDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.patronomicDataGridViewTextBoxColumn.Name = "patronomicDataGridViewTextBoxColumn";
-            this.patronomicDataGridViewTextBoxColumn.ReadOnly = true;
-            this.patronomicDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // adressDataGridViewTextBoxColumn
-            // 
-            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
-            this.adressDataGridViewTextBoxColumn.HeaderText = "Адрес проживания";
-            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
-            this.adressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.adressDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // deptDataGridViewTextBoxColumn
-            // 
-            this.deptDataGridViewTextBoxColumn.DataPropertyName = "Dept";
-            this.deptDataGridViewTextBoxColumn.HeaderText = "Отдел";
-            this.deptDataGridViewTextBoxColumn.Name = "deptDataGridViewTextBoxColumn";
-            this.deptDataGridViewTextBoxColumn.ReadOnly = true;
-            this.deptDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // aboutDataGridViewTextBoxColumn
-            // 
-            this.aboutDataGridViewTextBoxColumn.DataPropertyName = "About";
-            this.aboutDataGridViewTextBoxColumn.HeaderText = "О себе";
-            this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
-            this.aboutDataGridViewTextBoxColumn.ReadOnly = true;
-            this.aboutDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // buttonRed
-            // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            this.buttonRed.DefaultCellStyle = dataGridViewCellStyle17;
-            this.buttonRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRed.HeaderText = "";
-            this.buttonRed.Name = "buttonRed";
-            this.buttonRed.ReadOnly = true;
-            this.buttonRed.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.buttonRed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.buttonRed.Text = "Редактировать";
-            this.buttonRed.UseColumnTextForButtonValue = true;
-            this.buttonRed.Width = 92;
-            // 
-            // buttonDel
-            // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            this.buttonDel.DefaultCellStyle = dataGridViewCellStyle18;
-            this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDel.HeaderText = "";
-            this.buttonDel.Name = "buttonDel";
-            this.buttonDel.ReadOnly = true;
-            this.buttonDel.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.buttonDel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.buttonDel.Text = "Удалить";
-            this.buttonDel.UseColumnTextForButtonValue = true;
-            this.buttonDel.Width = 92;
-            // 
             // listBindingSource2
             // 
             this.listBindingSource2.DataMember = "list";
-            this.listBindingSource2.DataSource = this.naukaDeptDataSet2;
-            // 
-            // naukaDeptDataSet2
-            // 
-            this.naukaDeptDataSet2.DataSetName = "NaukaDeptDataSet2";
-            this.naukaDeptDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buttonAddMain
             // 
             this.buttonAddMain.BackColor = System.Drawing.Color.Green;
             this.buttonAddMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAddMain.FlatAppearance.BorderSize = 0;
             this.buttonAddMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddMain.ForeColor = System.Drawing.Color.Snow;
             this.buttonAddMain.Location = new System.Drawing.Point(589, 9);
@@ -223,10 +125,6 @@
             this.buttonAddMain.Text = "Добавить новую запись";
             this.buttonAddMain.UseVisualStyleBackColor = false;
             this.buttonAddMain.Click += new System.EventHandler(this.buttonAddMain_Click);
-            // 
-            // listTableAdapter2
-            // 
-            this.listTableAdapter2.ClearBeforeFill = true;
             // 
             // menuStrip1
             // 
@@ -250,36 +148,11 @@
             // 
             // menuStrip2
             // 
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.помошьToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(929, 24);
             this.menuStrip2.TabIndex = 5;
             this.menuStrip2.Text = "menuStrip2";
-            // 
-            // помошьToolStripMenuItem
-            // 
-            this.помошьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.функционалToolStripMenuItem,
-            this.оПрограммеToolStripMenuItem1});
-            this.помошьToolStripMenuItem.Name = "помошьToolStripMenuItem";
-            this.помошьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.помошьToolStripMenuItem.Text = "Помощь";
-            // 
-            // функционалToolStripMenuItem
-            // 
-            this.функционалToolStripMenuItem.Name = "функционалToolStripMenuItem";
-            this.функционалToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.функционалToolStripMenuItem.Text = "Функционал";
-            this.функционалToolStripMenuItem.Click += new System.EventHandler(this.функционалToolStripMenuItem_Click);
-            // 
-            // оПрограммеToolStripMenuItem1
-            // 
-            this.оПрограммеToolStripMenuItem1.Name = "оПрограммеToolStripMenuItem1";
-            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
-            this.оПрограммеToolStripMenuItem1.Text = "О программе";
-            this.оПрограммеToolStripMenuItem1.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem1_Click);
             // 
             // textBoxFind
             // 
@@ -306,18 +179,19 @@
             this.groupBox1.Controls.Add(this.textBox2Surname);
             this.groupBox1.Controls.Add(this.textBox1Name);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 311);
+            this.groupBox1.Location = new System.Drawing.Point(12, 297);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(902, 228);
+            this.groupBox1.Size = new System.Drawing.Size(902, 216);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Редактирование данных ";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(589, 20);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(602, 23);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(141, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(104, 20);
             this.dateTimePicker1.TabIndex = 16;
             // 
             // comboBox1
@@ -329,7 +203,7 @@
             "Отдел разработки",
             "Руководство",
             "Отдел эксплуатации"});
-            this.comboBox1.Location = new System.Drawing.Point(780, 19);
+            this.comboBox1.Location = new System.Drawing.Point(780, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(116, 21);
             this.comboBox1.TabIndex = 15;
@@ -337,13 +211,14 @@
             // button1SaveChanges
             // 
             this.button1SaveChanges.BackColor = System.Drawing.Color.Green;
+            this.button1SaveChanges.FlatAppearance.BorderSize = 0;
             this.button1SaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1SaveChanges.ForeColor = System.Drawing.Color.White;
-            this.button1SaveChanges.Location = new System.Drawing.Point(706, 172);
+            this.button1SaveChanges.Location = new System.Drawing.Point(780, 174);
             this.button1SaveChanges.Name = "button1SaveChanges";
-            this.button1SaveChanges.Size = new System.Drawing.Size(141, 23);
+            this.button1SaveChanges.Size = new System.Drawing.Size(98, 23);
             this.button1SaveChanges.TabIndex = 14;
-            this.button1SaveChanges.Text = "Сохранить изменения";
+            this.button1SaveChanges.Text = "Сохранить";
             this.button1SaveChanges.UseVisualStyleBackColor = false;
             this.button1SaveChanges.Click += new System.EventHandler(this.button1button1SaveChanges_Click);
             // 
@@ -377,7 +252,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(736, 23);
+            this.label4.Location = new System.Drawing.Point(736, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 10;
@@ -395,7 +270,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(497, 25);
+            this.label2.Location = new System.Drawing.Point(510, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 8;
@@ -446,31 +321,134 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Имя";
             // 
-            // panel1
+            // button1Close
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(712, 63);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(92, 35);
-            this.panel1.TabIndex = 12;
+            this.button1Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button1Close.FlatAppearance.BorderSize = 0;
+            this.button1Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1Close.ForeColor = System.Drawing.Color.White;
+            this.button1Close.Location = new System.Drawing.Point(792, 528);
+            this.button1Close.Name = "button1Close";
+            this.button1Close.Size = new System.Drawing.Size(97, 23);
+            this.button1Close.TabIndex = 12;
+            this.button1Close.Text = "Закрыть";
+            this.button1Close.UseVisualStyleBackColor = false;
+            this.button1Close.Click += new System.EventHandler(this.button1Close_Click);
             // 
-            // panel2
+            // staffDataSet
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(802, 63);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(94, 35);
-            this.panel2.TabIndex = 13;
+            this.staffDataSet.DataSetName = "staffDataSet";
+            this.staffDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblistBindingSource
+            // 
+            this.tblistBindingSource.DataMember = "tb_list";
+            this.tblistBindingSource.DataSource = this.staffDataSet;
+            // 
+            // tb_listTableAdapter
+            // 
+            this.tb_listTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "surname";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "patronomic";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "date";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Дата рождения";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "adress";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Адрес проживания";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "dept";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Отдел";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "about";
+            this.dataGridViewTextBoxColumn7.HeaderText = "О себе";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // buttonRed
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.buttonRed.DefaultCellStyle = dataGridViewCellStyle1;
+            this.buttonRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRed.HeaderText = "";
+            this.buttonRed.Name = "buttonRed";
+            this.buttonRed.ReadOnly = true;
+            this.buttonRed.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.buttonRed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.buttonRed.Text = "Редактировать";
+            this.buttonRed.UseColumnTextForButtonValue = true;
+            this.buttonRed.Width = 92;
+            // 
+            // buttonDel
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.buttonDel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDel.HeaderText = "";
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.ReadOnly = true;
+            this.buttonDel.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.buttonDel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.buttonDel.Text = "Удалить";
+            this.buttonDel.UseColumnTextForButtonValue = true;
+            this.buttonDel.Width = 92;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 573);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ControlBox = false;
+            this.Controls.Add(this.button1Close);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBoxFind);
             this.Controls.Add(this.buttonAddMain);
@@ -486,13 +464,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.naukaDeptDataSet2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staffDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblistBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,17 +478,12 @@
         #endregion
 
         public System.Windows.Forms.DataGridView dataGridView1;
-        public NaukaDeptDataSet2 naukaDeptDataSet2;
         public System.Windows.Forms.BindingSource listBindingSource2;
-        public NaukaDeptDataSet2TableAdapters.listTableAdapter listTableAdapter2;
         private System.Windows.Forms.Button buttonAddMain;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem помошьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem функционалToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem1;
         private System.Windows.Forms.TextBox textBoxFind;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1SaveChanges;
@@ -536,10 +508,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn deptDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aboutDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1Close;
+        private staffDataSet staffDataSet;
+        private System.Windows.Forms.BindingSource tblistBindingSource;
+        private staffDataSetTableAdapters.tb_listTableAdapter tb_listTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewButtonColumn buttonRed;
         private System.Windows.Forms.DataGridViewButtonColumn buttonDel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
     }
 }
 
